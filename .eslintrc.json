@@ -23,12 +23,38 @@
     "sourceType": "module"
   },
   "plugins": ["react", "react-native", "@typescript-eslint"],
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [["~", "./src/"]],
+        "extensions": [".ts", ".js", "jsx", ".tsx"]
+      },
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "moduleDirectory": ["node_modules", "src/"]
+      }
+    }
+  },
   "rules": {
-    // allow .js files to contain JSX code
     "react/jsx-filename-extension": [
       1,
       {
         "extensions": [".tsx"]
+      }
+    ],
+    "no-console": "warn",
+    "no-alert": "warn",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ignorePackages": true,
+        "pattern": {
+          "js": "never",
+          "jsx": "never",
+          "ts": "never",
+          "tsx": "never"
+        }
       }
     ],
     "react/react-in-jsx-scope": "off",

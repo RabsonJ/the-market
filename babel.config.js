@@ -2,15 +2,16 @@ module.exports = function (api) {
   api.cache(true)
   return {
     presets: ['babel-preset-expo'],
+    extensions: ['.ios.js', '.android.js', '.js', '.jsx', '.json', '.tsx', '.ts', '.native.js'],
     plugins: [
       [
         'module-resolver',
         {
-          root: ['./src'],
+          root: ['./'],
           extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],
           alias: {
             tests: ['./tests/'],
-            '@components': './src/components'
+            '^~(.+)': './src/\\1'
           }
         }
       ],

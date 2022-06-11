@@ -6,9 +6,9 @@
     "target": "esnext",
     "baseUrl": ".",
     "paths": {
+       "~*": ["./src/*"],
       "*": ["src/*"],
-      "tests": ["tests/*"],
-      "@components/*": ["src/components/*"]
+      "tests": ["tests/*"]
     },
     "noUnusedLocals": true,
     "noUnusedParameters": true,
